@@ -12,5 +12,4 @@ describe Cipher do
       expect( Cipher.encode( "peter") ).to eq("crgre")
     end
   end
-  
 end
