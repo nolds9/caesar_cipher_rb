@@ -3,13 +3,14 @@ class Cipher
   def encode(string)
     alpha = ('a'..'z').to_a
     # before I remembered each_with_index was a thing
-    # interesting capital letters break this. why
-    cipher = string.gsub(/[\s , \W]/,"").split('').map { |l| alpha[alpha.index(l)+13] == !nil ? l = alpha[alpha.index(l)+13] : l = alpha[alpha.index(l)-13]} * ",".gsub(/[\s , \W]/,"")
+    cipher = string.gsub(/[\s , \W]/,"").split('').map{ |l| alpha[alpha.index(l)+13] == !nil ? l = alpha[alpha.index(l)+13] : l = alpha[alpha.index(l)-13]} * ",".gsub(/[\s , \W]/,"")
   end
 
 end
 
 c = Cipher.new
+greeting = "| Nick |".center(204,"==")
+puts greeting
 puts "What is your secret message"
 secret = gets.chomp
 puts "the secret is #{secret}"
